@@ -9,9 +9,7 @@ class ProductForm extends React.Component {
       name: '',
       upc: '',
       available_on:'',
-      product_properties:[],
-      product_name:'',
-      value:''
+      product_properties:[]
     };
 
 
@@ -27,6 +25,7 @@ class ProductForm extends React.Component {
   handleSubmit(event) {
     event.preventDefault();
     const newProduct = Object.assign({}, this.state);
+    console.log(newProduct);
     this.props.createProduct(newProduct);
   }
 
@@ -79,18 +78,6 @@ class ProductForm extends React.Component {
                     value={this.state.available_on}
                     onChange={this.update('available_on')}/>
           </label>
-          <label>Property Name:
-            <input type='text'
-                   value={this.state.property_name}
-                   onChange={this.update('property_name')}
-                 />
-          </label>
-          <label>Property Value:
-            <input type='datetime-local'
-                    value={this.state.value}
-                    onChange={this.update('value')}/>
-          </label>
-          <button onClick={this.addProperty}>Add Property</button>
           <input type='submit' value='Save'/>
         </form>
       </div>

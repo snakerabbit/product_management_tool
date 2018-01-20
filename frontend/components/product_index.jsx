@@ -36,7 +36,6 @@ class ProductIndex extends React.Component {
     let filtered = Object.values(this.props.products).filter(product =>{
       return product.name.toLowerCase().includes(event.target.value.toLowerCase());
     });
-    console.log(filtered);
     this.setState({
       typed:event.target.value,
       filteredProducts: filtered
@@ -45,12 +44,13 @@ class ProductIndex extends React.Component {
   }
 
   render() {
-    console.log(this.state);
     return(
       <div>
         <h3>Product Index</h3>
         <form>
-          <input type='text' onChange={this.findMatches}></input>
+          <label>Search:
+            <input type='text' onChange={this.findMatches}></input>
+          </label>
         </form>
         <ul>
           {this.showProducts()}

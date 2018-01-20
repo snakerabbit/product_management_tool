@@ -36,7 +36,6 @@ class PropertyForm extends React.Component {
         <h3>Properties</h3>
         <form onSubmit={this.handleSubmit}>
 
-
           <input type='submit' value='Add Property'/>
         </form>
       </div>
