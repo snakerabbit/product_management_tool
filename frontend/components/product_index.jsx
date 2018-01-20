@@ -21,15 +21,25 @@ class ProductIndex extends React.Component {
     if(this.state.typed.length !== 0){
       products = this.state.filteredProducts;
     }
-    return(
-      products.map(product =>{
-        return (
-          <li>
-            <ProductIndexItem product={product}/>
-          </li>
-        );
-      })
-    );
+
+    if(products.length === 0){
+      return(
+        <div>
+          <p>No Matches Found</p>
+        </div>
+      );
+    } else {
+      return(
+        products.map(product =>{
+          return (
+            <li>
+              <ProductIndexItem product={product}/>
+            </li>
+          );
+        })
+      );
+    }
+
   }
 
   findMatches (event) {
