@@ -5,7 +5,7 @@ class ProductIndex extends React.Component {
   constructor(props) {
     super(props);
     this.showProducts = this.showProducts.bind(this);
-    this.updateState = this.updateState.bind(this);
+    this.findMatches = this.findMatches.bind(this);
     this.state ={
       typed: '',
       filteredProducts:[]
@@ -17,7 +17,10 @@ class ProductIndex extends React.Component {
   }
 
   showProducts () {
-    const products = Object.values(this.props.products);
+    let products = Object.values(this.props.products);
+    if(this.state.typed.length !== 0){
+      products = this.state.filteredProducts;
+    }
     return(
       products.map(product =>{
         return (
@@ -29,19 +32,25 @@ class ProductIndex extends React.Component {
     );
   }
 
-  updateState (event) {
-    this.setState({
-      typed:event.target.value
+  findMatches (event) {
+    let filtered = Object.values(this.props.products).filter(product =>{
+      return product.name.toLowerCase().includes(event.target.value.toLowerCase());
     });
-    console.log(this.state);
+    console.log(filtered);
+    this.setState({
+      typed:event.target.value,
+      filteredProducts: filtered
+    });
+
   }
 
   render() {
+    console.log(this.state);
     return(
       <div>
         <h3>Product Index</h3>
         <form>
-          <input type='text' onChange={this.updateState}></input>
+          <input type='text' onChange={this.findMatches}></input>
         </form>
         <ul>
           {this.showProducts()}
