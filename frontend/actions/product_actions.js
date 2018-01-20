@@ -24,6 +24,13 @@ const receiveErrors = errors => {
   });
 };
 
+export const clearSessionErrors = () => {
+  return({
+    type: RECEIVE_ERRORS,
+    errors: []
+  });
+};
+
 
 export const fetchProducts = () => dispatch => (
   ProductApiUtil.fetchProducts().then(products => dispatch(receiveAllProducts(products)))
