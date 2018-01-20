@@ -17,3 +17,6 @@ On the command line:
 
 
 ## Features to be Added
++ MVP: Add New Property To Each Product
++ Allow Search to Apply to Other Property Attributes
++ Allow for Editing Products, Properties, Product Properties
