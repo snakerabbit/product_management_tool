@@ -10,6 +10,13 @@
 
 class Property < ApplicationRecord
   validates :name, presence: true
-  
-  has_many :product_properties
+
+  has_many :product_properties,
+    class_name: 'ProductProperty',
+    foreign_key: :property_id,
+    primary_key: :id
+
+  has_many :products,
+    through: :product_properties,
+    source: :product
 end

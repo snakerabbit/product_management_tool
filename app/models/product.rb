@@ -16,7 +16,12 @@ class Product < ApplicationRecord
   validates :upc, length: {minimum: 10, maximum: 13}
   validates :upc, format:{ with: /\d*/, on: :create }
 
-  has_many :product_properties
+  has_many :product_properties,
+    class_name: 'ProductProperty',
+    foreign_key: :product_id,
+    primary_key: :id
 
-
+  has_many :properties,
+    through: :product_properties,
+    source: :property
 end

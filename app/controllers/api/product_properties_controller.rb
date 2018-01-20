@@ -1,6 +1,6 @@
 class Api::ProductPropertiesController < ApplicationController
   def create
-    @product_property = Product_Property.new(product_property_params)
+    @product_property = ProductProperty.new(product_property_params)
 
     if @product_property.save
       render :show
@@ -9,7 +9,7 @@ class Api::ProductPropertiesController < ApplicationController
   end
 
   def show
-    @product_property = Product_Property.find(params[:id])
+    @product_property = ProductProperty.find(params[:id])
   end
 
   private

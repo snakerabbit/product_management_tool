@@ -12,6 +12,16 @@
 
 class ProductProperty < ApplicationRecord
   validates :value, :product_id, :property_id, presence: true
-  belongs_to :product
-  belongs_to :property
+
+  belongs_to :product,
+    class_name: 'Product',
+    foreign_key: :product_id,
+    primary_key: :id
+
+  belongs_to :property,
+    class_name: 'Property',
+    foreign_key: :property_id,
+    primary_key: :id
+
+    
 end
