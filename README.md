@@ -1,24 +1,19 @@
-# README
+# Product Management Tool
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Product Management Tool is an application that allows for users to view, search for, and create products
 
-Things you may want to cover:
+## Setup
 
-* Ruby version
+Clone this repo locally and `cd` to the project's root directory.
 
-* System dependencies
+On the command line:
 
-* Configuration
++ Run `brew install postgresql`
++ Start the PostgreSQL server app
++ Run `bundle install`
++ Run `bundle exec rails db:setup`
++ Run `bundle exec rails server`
++ Run `webpack --watch`
 
-* Database creation
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Features to be Added
