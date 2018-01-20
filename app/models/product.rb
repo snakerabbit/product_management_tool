@@ -14,7 +14,7 @@ class Product < ApplicationRecord
   validates :name, :upc, :available_on, presence: true
   validates :name, :upc, uniqueness: true
   validates :upc, length: {minimum: 10, maximum: 13}
-  validates :upc, format:{ with: /\d*/g, on: :create }
+  validates :upc, format:{ with: /\d*/, on: :create }
 
   has_many :product_properties
 

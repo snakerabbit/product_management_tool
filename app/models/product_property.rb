@@ -12,8 +12,6 @@
 
 class ProductProperty < ApplicationRecord
   validates :value, :product_id, :property_id, presence: true
-  
-
   belongs_to :product
   belongs_to :property
 end
