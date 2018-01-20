@@ -11,3 +11,11 @@ export const fetchProduct = id =>{
       url: `api/products/${id}`
     });
 };
+
+export const createProduct = product => {
+  return $.ajax({
+    method: 'POST',
+    url: '/api/products',
+    data: {product}
+  });
+};
