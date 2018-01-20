@@ -5,6 +5,11 @@ class ProductIndex extends React.Component {
   constructor(props) {
     super(props);
     this.showProducts = this.showProducts.bind(this);
+    this.updateState = this.updateState.bind(this);
+    this.state ={
+      typed: '',
+      filteredProducts:[]
+    };
   }
 
   componentDidMount(){
@@ -13,7 +18,6 @@ class ProductIndex extends React.Component {
 
   showProducts () {
     const products = Object.values(this.props.products);
-    console.log(products);
     return(
       products.map(product =>{
         return (
@@ -25,10 +29,20 @@ class ProductIndex extends React.Component {
     );
   }
 
+  updateState (event) {
+    this.setState({
+      typed:event.target.value
+    });
+    console.log(this.state);
+  }
+
   render() {
     return(
       <div>
-        <h1>ProductIndex</h1>
+        <h3>Product Index</h3>
+        <form>
+          <input type='text' onChange={this.updateState}></input>
+        </form>
         <ul>
           {this.showProducts()}
         </ul>

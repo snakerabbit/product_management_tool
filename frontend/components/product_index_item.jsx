@@ -1,18 +1,24 @@
 import React from 'react';
 
 const ProductIndexItem = ({product}) =>{
-  console.log(product);
-  const properties_values = Object.values(product.product_properties).map(property =>{
+  const propertiesValues = Object.values(product.product_properties).map(property =>{
     return property.value;
   });
 
-  console.log(properties_values);
+  const propertiesNames = Object.values(product.properties).map(property =>{
+    return property.name;
+  });
+
+  const properties = propertiesValues.map(value =>{
+    return `${propertiesNames[propertiesValues.indexOf(value)]}: ${value}`;
+  });
+
   return(
     <div>
       <p>Product: {product.name}</p>
       <p>UPC: {product.upc}</p>
       <p>Available On: {product.available_on}</p>
-      <p>Properties: {properties_values}</p>
+      <p>Properties: {properties.join(', ')}</p>
     </div>
   );
 };
