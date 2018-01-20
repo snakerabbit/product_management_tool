@@ -1,0 +1,23 @@
+# == Schema Information
+#
+# Table name: products
+#
+#  id           :integer          not null, primary key
+#  name         :string           not null
+#  upc          :string           not null
+#  available_on :datetime         not null
+#  created_at   :datetime         not null
+#  updated_at   :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  upc: MyString
+  available_on: 2018-01-19 16:31:12
+
+two:
+  name: MyString
+  upc: MyString
+  available_on: 2018-01-19 16:31:12
