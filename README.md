@@ -14,6 +14,7 @@ On the command line:
 + Run `bundle exec rails db:setup`
 + Run `bundle exec rails server`
 + Run `webpack --watch`
++ Open browser on local host
 
 
 ## Features to be Added
