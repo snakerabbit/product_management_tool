@@ -14,8 +14,8 @@ class Product < ApplicationRecord
   validates :name, :upc, :available_on, presence: true
   validates :name, :upc, uniqueness: true
   validates :upc, length: {minimum: 10, maximum: 13}
-  validates :upc, format:{ with: /\d*/, on: :create }
-
+  # validates :available_on,:on => :create, :after =>lambda { Date.current }
+  #gem not working
   has_many :product_properties,
     class_name: 'ProductProperty',
     foreign_key: :product_id,
@@ -24,4 +24,5 @@ class Product < ApplicationRecord
   has_many :properties,
     through: :product_properties,
     source: :property
+
 end

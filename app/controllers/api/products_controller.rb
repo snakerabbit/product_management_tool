@@ -6,7 +6,7 @@ class Api::ProductsController < ApplicationController
     if @product.save
       render :show
     else
-      render json: @product.errors, status: 422
+      render json: @product.errors
     end
   end
 

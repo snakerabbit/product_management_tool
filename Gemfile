@@ -30,6 +30,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'pry-rails'
 gem 'annotate'
 gem 'jquery-rails'
+gem 'validates_timeliness', '~> 4.0'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
